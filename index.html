@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/tifa.png">
+  <link rel="icon" href="./static/images/icon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -165,13 +165,14 @@
         <img src="./static/images/teaser.jpg" alt="sketchpad teaser">
         <h2 class="subtitle has-text-centered">
           <b>Sketchpad equips GPT-4 with the ability to generate intermediate sketches to reason
-          over tasks. </b>
+            over tasks. </b>
         </h2>
         <h2 class="subtitle has-text-justified">
           Given a visual input and query, such as proving the angles of a triangle equal 180°,
           Sketchpad enables the model to draw auxiliary lines which help solve the geometry problem.
           For computer vision problems, Sketchpad can use vision specialists to sketch and facilitate visual reasoning.
-          For example, drawing a bounding box using <b>Grounding DINO</b>, or sketching a mask using <b>Segment Anything</b>.
+          For example, drawing a bounding box using <b>Grounding DINO</b>, or sketching a mask using <b>Segment
+            Anything</b>.
         </h2>
 
 
@@ -179,41 +180,51 @@
     </div>
   </section>
 
+  <!--/ Abstract. -->
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Humans draw to facilitate reasoning: we draw auxiliary lines when solving geometry problems; we mark and
+              circle when
+              reasoning on maps; we use sketches to amplify our ideas and relieve our limited-capacity working memory.
+              However, such actions are missing in current multimodal language models (LMs). Current chain-of-thought
+              and tool-use
+              paradigms only use text as intermediate reasoning steps.
+              In this work, we introduce sketchpad, a framework that gives multimodal LMs a visual sketchpad and tools
+              to draw on the
+              sketchpad. The LM conducts planning and reasoning according to the visual artifacts it has drawn.
+              Different from prior work, which uses text-to-image models to enable LMs to draw, sketchpad enables LMs to
+              draw with lines,
+              boxes, marks, etc., which is closer to human sketching and better facilitates reasoning. sketchpad can
+              also use specialist
+              vision models during the sketching process (e.g., draw bounding boxes with object detection models, draw
+              masks with
+              segmentation models), to further enhance visual perception and reasoning. We experiment on a wide range of
+              math tasks
+              (including geometry, functions, graph, chess) and complex visual reasoning tasks. sketchpad substantially
+              improves
+              performance on all tasks over strong base models with no sketching, yielding an average gain of 12.7% on
+              math tasks,
+              and 8.6% on vision tasks. GPT-4o with sketchpad sets a new state of the art on all tasks, including
+              V*Bench (80.3%),
+              BLINK spatial reasoning (83.9%), and visual correspondence (80.8%).
+            </p>
+
+          </div>
+        </div>
+      </div>
       <!--/ Abstract. -->
 
 
-
-      <section class="section">
-        <div class="container is-max-desktop">
-          <!-- Abstract. -->
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">Abstract</h2>
-              <div class="content has-text-justified">
-                <p>
-                  Humans draw to facilitate reasoning: we draw auxiliary lines when solving geometry problems; we mark and circle when
-                  reasoning on maps; we use sketches to amplify our ideas and relieve our limited-capacity working memory.
-                  However, such actions are missing in current multimodal language models (LMs). Current chain-of-thought and tool-use
-                  paradigms only use text as intermediate reasoning steps.
-                  In this work, we introduce sketchpad, a framework that gives multimodal LMs a visual sketchpad and tools to draw on the
-                  sketchpad. The LM conducts planning and reasoning according to the visual artifacts it has drawn.
-                  Different from prior work, which uses text-to-image models to enable LMs to draw, sketchpad enables LMs to draw with lines,
-                  boxes, marks, etc., which is closer to human sketching and better facilitates reasoning. sketchpad can also use specialist
-                  vision models during the sketching process (e.g., draw bounding boxes with object detection models, draw masks with
-                  segmentation models), to further enhance visual perception and reasoning. We experiment on a wide range of math tasks
-                  (including geometry, functions, graph, chess) and complex visual reasoning tasks. sketchpad substantially improves
-                  performance on all tasks over strong base models with no sketching, yielding an average gain of 12.7% on math tasks,
-                  and 8.6% on vision tasks. GPT-4o with sketchpad sets a new state of the art on all tasks, including V*Bench (80.3%),
-                  BLINK spatial reasoning (83.9%), and visual correspondence (80.8%).
-                </p>
-
-              </div>
-            </div>
-          </div>
-          <!--/ Abstract. -->
-
-
-          <!-- <section class="hero is-small">
+      <!-- <section class="hero is-small">
             <div class="hero-body">
               <div class="container is-max-desktop is-centered has-text-centered">
                 <h2 class="title is-3">Updates</h2>
@@ -226,57 +237,108 @@
             </div>
           </section> -->
 
-          <section class="hero is-small">
-            <div class="hero-body">
-              <div class="container is-max-desktop is-centered has-text-centered">
-                <h2 class="title is-3">More Examples</h2>
-                <img src="static/images/website_examples_1.jpg">
-                <img src="static/images/website_examples_2.jpg">
-                <div class="content has-text-justified">
+      <section class="hero is-small">
+        <div class="hero-body">
+          <div class="container is-max-desktop is-centered has-text-centered">
+            <h2 class="title is-3">More Examples</h2>
+            <img src="static/images/website_examples_1.jpg">
+            <img src="static/images/website_examples_2.jpg">
+            <div class="content has-text-justified">
 
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+            <section class="hero is-small">
+              <div class="hero-body">
+                <div class="container is-max-desktop is-centered has-text-centered">
+                  <h2 class="title is-3">Effectiveness of Sketchpad</h2>
+                  <img src="static/images/sketchpad_table1.jpg">
+                  <img src="static/images/sketchpad_table2.jpg">
+                  <div class="content has-text-justified">
+                    Sketchpad substantially improves performance on all tasks over GPT-4-turbo and GPT-4o with no sketching. Specifically, GPT-4o with sketchpad sets a new state of the art on all tasks.
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
 
 
-          <section class="section is-light" id="BibTeX">
-            <div class="container is-max-desktop content">
-              <h2 class="title">BibTeX</h2>
-              <pre><code>@article{hu2024visual,
+
+
+      <section class="hero is-small">
+        <div class="container is-max-desktop content">
+          <br>
+          <h2 class="title is-3">Related Work</h2>
+          <ul>
+            <li> <a href="https://prior.allenai.org/projects/visprog">Visual Programming for Compositional Visual
+                Reasoning</a></li>
+            <li> <a href="https://viper.cs.columbia.edu/">ViperGPT: Visual Inference via Python Execution for
+                Reasoning</a></li>
+            <li> <a href="https://visual-program-distillation.github.io/">Visual Program Distillation:
+                Distilling Tools and Programmatic Reasoning into Vision-Language Models</a>
+            </li>
+            <li> <a href="https://arxiv.org/abs/2210.03629">ReAct: Synergizing Reasoning and Acting in Language
+                Models</a>
+            </li>
+            <li> <a href="https://github.com/microsoft/autogen">AutoGen</a>
+            </li>
+            <li> <a href="https://zeyofu.github.io/blink/">BLINK: Multimodal Large Language Models Can See but
+                Not Perceive</a>
+            </li>
+            <li> <a href="https://vstar-seal.github.io/">V*: Guided Visual Search as a Core Mechanism in Multimodal LLMs</a>
+            </li>
+            <li> <a href="https://arxiv.org/abs/2401.06209v1">Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs</a>
+            </li>
+            <li> <a href="https://isobench.github.io/">IsoBench: Benchmarking Multimodal Foundation Models on
+                Isomorphic Representations</a>
+            </li>
+            <li> <a href="https://arxiv.org/abs/2105.04165v3">Inter-GPS: Interpretable Geometry Problem Solving
+                with Formal Language and Symbolic Reasoning</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+
+      <section class="section is-light" id="BibTeX">
+        <div class="container is-max-desktop content">
+          <h2 class="title">BibTeX</h2>
+          <pre><code>@article{hu2024visual,
 title={Visual Sketchpad: Sketching as a Visual Chain of Thought for Multimodal Language Models},
 author={Hu, Yushi and Shi, Weijia and Fu, Xingyu and Roth, Dan and Ostendorf, Mari and Zettlemoyer, Luke and Smith, Noah A and Krishna, Ranjay},
 journal={arXiv preprint arXiv:2303.11897},
 year={2024}
 }
 </code></pre>
-            </div>
-          </section>
+        </div>
+      </section>
 
 
 
-          <footer class="footer">
-            <div class="container">
-              <div class="columns is-centered">
-                <div class="column is-8">
-                  <div class="content">
-                    <p>
-                      This website is licensed under a <a rel="license"
-                        href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                        Commons Attribution-ShareAlike 4.0 International License</a>.
-                    </p>
-                    <p>
-                      This means you are free to borrow the <a
-                        href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-                      we just ask that you link back to this page in the footer.
-                      Please remember to remove the analytics code included in the header of the website which
-                      you do not want on your website.
-                    </p>
-                  </div>
-                </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content">
+                <p>
+                  This website is licensed under a <a rel="license"
+                    href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                    Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+                <p>
+                  This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                    code</a> of this website,
+                  we just ask that you link back to this page in the footer.
+                  Please remember to remove the analytics code included in the header of the website which
+                  you do not want on your website.
+                </p>
               </div>
             </div>
-          </footer>
+          </div>
+        </div>
+      </footer>
 
 </body>
 
