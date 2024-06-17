@@ -324,15 +324,9 @@
         <h2 class="title is-5">Query 4: How do small models compare against large models?</h2>
         <img src="./static/images/analysis/query5-1.png">
         <h2 class="subtitle has-text-left">
-          Finally, we investigate \gptfouro, today's popular proprietary model:
-          1) what \emph{objects} are \gptfouro bad at recognizing when rotating/moving?
-          2) what \emph{relations} are \gptfouro bad at understanding?
-          3) what \emph{attributes} of objects are \gptfouro bad at recognizing?
-          To answer these questions, we first identify task generators for each question that can generate relevant tasks to evaluate, based on which we compare  \gptfouro's performance across different coarse-grained object/relation/attribute categories and their average. We can see that
-          1) \gptfouro does not perform well in recognizing “interactional” relations in images and “spatial” relations in videos, 
-          2) recognizing rotating/moving “furniture”, “food”, and “plant” is more challenging for \gptfouro than other object categories such as animal and vehicle, 
-          3) \gptfouro is worse at recognizing “color” than other attributes.
-          Analysis on fine-grained objects/relations/attributes that GPT4o is bad at can be found in the paper.
+          We are also interested in the relative performance of small versus large models with the same skills. On ImageQA tasks, for example, we observe that large multi-modal models collectively perform better than smaller models on ImageQA tasks. 
+          Nevertheless, this finding might not always hold for individual models. Through t-tests with pairs of small and large models from the same source, 
+          we find one exception: \instructblips ($\mu$ = 0.63) significantly outperforms \instructblipl  ($\mu$ = 0.49) on relation understanding (with $p$-value $< 1e-5$). 
         </h2>
         <br>
         <h2 class="title is-5">Query 5: What is today's popular proprietary model: GPT-4o bad at?</h2>
