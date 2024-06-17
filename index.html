@@ -193,11 +193,25 @@
         <h2 class="title is-3 has-text-centered">What is Task Me Anything?</h2>
         <img src="./static/images/teaser.png" alt="Teaser Image" style="height: 60%; display: block; margin-left: auto; margin-right: auto;">
         <h2 class="subtitle has-text-centered">
-          TaskMeAnything is a benchmark generation engine which produces a benchmark for large multimodal language models (MLMs) tailored to a user's needs. 
-          Additionally, it algorithmiclaly addresses user queries regarding MLM performance efficiently within a computational budget. 
-          It can answer any fine-grained user queries like <em>"what is the best model for recognizing dogs? GPT-4o or LLaVA-Next?"</em> within very small computational budget.
-          The current version maintains an extendable taxonomy of visual assets and can programmatically generate >750M image/video question-answering pairs, which focus on evaluating MLM perceptual capabilities.
-        </h2>
+            Benchmarks for large multimodal language models (MLMs) now serve to simultaneously
+            assess the general capabilities of models instead of evaluating for a specific
+            capability. As a result, when a developer wants to identify which models to use for
+            their application, they are overwhelmed by the number of benchmarks and remain
+            uncertain about which benchmark’s results are most reflective of their specific use
+            case. This paper introduces TASK-ME-ANYTHING, a benchmark generation engine
+            which produces a benchmark tailored to a user’s needs. TASK-ME-ANYTHING
+            maintains an extendable taxonomy of visual assets and can programmatically generate
+            a vast number of task instances. Additionally, it algorithmically addresses
+            user queries regarding MLM performance efficiently within a computational budget.
+            It contains 113K images, 10K videos, 2K 3D object assets, over 365 object
+            categories, 655 attributes, and 335 relationships. It can generate 750M image/video
+            question-answering pairs, which focus on evaluating MLM perceptual capabilities.
+            TASK-ME-ANYTHING reveals critical insights: open-source MLMs excel in object
+            and attribute recognition but lack spatial and temporal understanding; each model
+            exhibits unique strengths and weaknesses; larger models generally perform better,
+            though exceptions exist; and GPT4O demonstrates challenges in recognizing
+            rotating/moving objects and distinguishing colors.
+        </h2>a
       </div>
     </div>
   </section>  
@@ -207,7 +221,7 @@
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container is-max-desktop is-centered has-text-centered">
-        <h2 class="title is-3">Generation Pipeline</h2>
+        <h2 class="title is-3">Analysis</h2>
         <img src="static/images/website_examples_1.jpg">
         <img src="static/images/website_examples_2.jpg">
         <div class="content has-text-justified">
@@ -242,41 +256,6 @@
 
 
 
-
-
-
-  <section class="section is-light" style="background-color: #f5f5f5;">
-    <div class="container is-max-desktop">
-      <!-- Abstract. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-            Benchmarks for large multimodal language models (MLMs) now serve to simultaneously
-            assess the general capabilities of models instead of evaluating for a specific
-            capability. As a result, when a developer wants to identify which models to use for
-            their application, they are overwhelmed by the number of benchmarks and remain
-            uncertain about which benchmark’s results are most reflective of their specific use
-            case. This paper introduces TASK-ME-ANYTHING, a benchmark generation engine
-            which produces a benchmark tailored to a user’s needs. TASK-ME-ANYTHING
-            maintains an extendable taxonomy of visual assets and can programmatically generate
-            a vast number of task instances. Additionally, it algorithmically addresses
-            user queries regarding MLM performance efficiently within a computational budget.
-            It contains 113K images, 10K videos, 2K 3D object assets, over 365 object
-            categories, 655 attributes, and 335 relationships. It can generate 750M image/video
-            question-answering pairs, which focus on evaluating MLM perceptual capabilities.
-            TASK-ME-ANYTHING reveals critical insights: open-source MLMs excel in object
-            and attribute recognition but lack spatial and temporal understanding; each model
-            exhibits unique strengths and weaknesses; larger models generally perform better,
-            though exceptions exist; and GPT4O demonstrates challenges in recognizing
-            rotating/moving objects and distinguishing colors.
-            </p>
-
-          </div>
-        </div>
-      </div>
-  </section>
 
 
 
