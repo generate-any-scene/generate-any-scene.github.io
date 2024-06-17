@@ -278,7 +278,17 @@
     <div class="hero-body">
       <div class="container is-max-desktop is-centered has-text-centered">
         <h2 class="title is-3">Analysis</h2>
+        <h2 class="title is-5">Query 1: How do models perform over a random subset of all possible questions?</h2>
         <img src="./static/images/analysis/query1-1.png">
+        <h2 class="subtitle has-text-left">
+          We evaluated 18 MLMs on the Task-Me-Anything-Random, a random set of generated tasks, with a detailed prompt and a succinct prompt.
+          The detailed prompt typically yields better results; however, certain models, like GPT4V, perform much better with the succinct prompt, 
+          indicating that current models are still prompt-sensitive. For ImageQA tasks, the latest open-sourced models, such as \internvlchat and \llavanext, 
+          perform better than popular proprietary models, achieving state-of-the-art performance. 
+          Notably, models like \instructblips and \qwenvl perform significantly better with detailed prompt than succinct prompt. 
+          For VideoQA tasks, we also evaluated larger or proprietary ImageQA models, like GPT4V, by concatenating four frames of a video into a single picture. 
+          Notably, \videollavas perform much better with succinct prompts than other small open-source models. 
+        </h2>
         <img src="./static/images/analysis/query3-1.png">
         <img src="./static/images/analysis/query3-2.png">
         <img src="./static/images/analysis/query4-1.png">
