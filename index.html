@@ -287,6 +287,37 @@
           For VideoQA tasks, we also evaluated larger or proprietary ImageQA models, like GPT4V, by concatenating four frames of a video into a single picture. 
           Notably, \videollavas perform much better with succinct prompts than other small open-source models. 
         </h2>
+        <br>
+        <h2 class="title is-5">Query 2: What skills are MLMs best and worst at?</h2>
+        <h2 class="subtitle has-text-left">
+          We analyze performance across different perceptual capabilities to answer: what skills are all models good or bad at? 
+          We conduct this study for both ImageQA and VideoQA tasks respectively. 
+          We find that no specific skill appears to be the best or worst across (both image and video) models. 
+          We see that all models struggle in spatial reasoning, counting objects, and 3D attribute understanding on ImageQA tasks, 
+          and object recognition, temporal understanding on VideoQA tasks. 
+          They perform well on object, attribute, and other relationship recognition instances.
+          Surprisingly, we find that most MLMs perform the best at relationship understanding between objects, 
+          scoring high if not perfectly on interactional relations such as ``riding'', ``looking into'', ``lying next to'' etc. 
+          On the other hand, these models struggle the most in spatial reasoning in synthetic images, performing poorly especially on 
+          questions that ask about objects in the ``middle'', ``bottom'' or ``back'' (for 3D images) part of the image. 
+          Nevertheless, some models behave differently. For example, \llaval is worst at recognizing 3D attributes, 
+          failing at identifying the ``smallest'' or ``closest'' 3D objects correctly. 
+          Meanwhile, \llavas is best at object recognition and worst at relation understanding, 
+          struggling to understand simple actions such as ``touching'' that other models perform well on.
+        </h2>
+        <br>
+        <h2 class="title is-5">Query 3: What is the best MLM for each specific skill?</h2>
+        <h2 class="subtitle has-text-left">
+          \llaval stood out as the strongest model on ImageQA tasks, achieving the best performance on all skills except for relation understanding; 
+          and \videollavas is the overall winner on VideoQA tasks, scoring the highest on action understanding and second or third elsewhere. 
+          Specifically, we find that \llaval performs consistently better than other multi-modal models on all skills except for relation understanding, 
+          where \qwenvlchat performs better ((a)). On VideoQA tasks, in addition to \videollavas, \chatunivis is also relatively well-rounded, 
+          positioning in the top 3 models across all skills except for Attribute understanding  ((b)). On the other hand, while \videochattwos specializes in object, attribute, 
+          and temporal attribute understanding, it falls short on Action and Relation reasoning
+
+          More analysis on finer-grained skills can be found in the paper.
+        </h2>
+        <br>
         <img src="./static/images/analysis/query3-1.png">
         <img src="./static/images/analysis/query3-2.png">
         <img src="./static/images/analysis/query4-1.png">
@@ -304,6 +335,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- <section class="hero is-small">
     <div class="hero-body">
