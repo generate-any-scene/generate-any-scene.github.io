@@ -35,6 +35,10 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -264,7 +268,7 @@
         <h2 class="title is-3">The task space of Task Me Anything</h2>
         <img src="./static/images/stats.png">
         <h2 class="subtitle has-text-left">
-          The statistics of generatable tasks of each task generator and example image/video in \name. 
+          The statistics of generatable tasks of each task generator and example image/video in Task-Me-Anything. 
           We roughly each task generator with high-level perceptual skills and this collection of task generators can collectively generate over 750M VQA tasks. 
           The task space of Task Me Anything is easy to grow exponentially by (1) adding new source data (eg, 3D object models) or (2) adding new task generators. 
           We plan to continuously expand the task space to adapt to the ever-changing capability of MLMs 
@@ -283,11 +287,11 @@
         <h2 class="subtitle has-text-left">
           We evaluated 18 MLMs on the Task-Me-Anything-Random, a random set of generated tasks, with a detailed prompt and a succinct prompt.
           The detailed prompt typically yields better results; however, certain models, like GPT4V, perform much better with the succinct prompt, 
-          indicating that current models are still prompt-sensitive. For ImageQA tasks, the latest open-sourced models, such as \internvlchat and \llavanext, 
+          indicating that current models are still prompt-sensitive. For ImageQA tasks, the latest open-sourced models, such as InternVL-Chat-1.5-24B and LLaVA-NEXT-34B, 
           perform better than popular proprietary models, achieving state-of-the-art performance. 
-          Notably, models like \instructblips and \qwenvl perform significantly better with detailed prompt than succinct prompt. 
+          Notably, models like InstructBlip-7B and Qwen-VL perform significantly better with detailed prompt than succinct prompt. 
           For VideoQA tasks, we also evaluated larger or proprietary ImageQA models, like GPT4V, by concatenating four frames of a video into a single picture. 
-          Notably, \videollavas perform much better with succinct prompts than other small open-source models. 
+          Notably, Video-LLaVA-7B perform much better with succinct prompts than other small open-source models. 
         </h2>
         <br>
         <h2 class="title is-5">Query 2: What skills are MLMs best and worst at?</h2>
@@ -302,20 +306,20 @@
           scoring high if not perfectly on interactional relations such as ``riding'', ``looking into'', ``lying next to'' etc. 
           On the other hand, these models struggle the most in spatial reasoning in synthetic images, performing poorly especially on 
           questions that ask about objects in the ``middle'', ``bottom'' or ``back'' (for 3D images) part of the image. 
-          Nevertheless, some models behave differently. For example, \llaval is worst at recognizing 3D attributes, 
+          Nevertheless, some models behave differently. For example, LLaVA-13B is worst at recognizing 3D attributes, 
           failing at identifying the ``smallest'' or ``closest'' 3D objects correctly. 
-          Meanwhile, \llavas is best at object recognition and worst at relation understanding, 
+          Meanwhile, LLaVA-7B is best at object recognition and worst at relation understanding, 
           struggling to understand simple actions such as ``touching'' that other models perform well on.
         </h2>
         <br>
         <h2 class="title is-5">Query 3: What is the best MLM for each specific skill?</h2>
         <img src="./static/images/analysis/query3-1.png">
         <h2 class="subtitle has-text-left">
-          \llaval stood out as the strongest model on ImageQA tasks, achieving the best performance on all skills except for relation understanding; 
-          and \videollavas is the overall winner on VideoQA tasks, scoring the highest on action understanding and second or third elsewhere. 
-          Specifically, we find that \llaval performs consistently better than other multi-modal models on all skills except for relation understanding, 
-          where \qwenvlchat performs better ((a)). On VideoQA tasks, in addition to \videollavas, \chatunivis is also relatively well-rounded, 
-          positioning in the top 3 models across all skills except for Attribute understanding  ((b)). On the other hand, while \videochattwos specializes in object, attribute, 
+          LLaVA-13B stood out as the strongest model on ImageQA tasks, achieving the best performance on all skills except for relation understanding; 
+          and Video-LLaVA-7B is the overall winner on VideoQA tasks, scoring the highest on action understanding and second or third elsewhere. 
+          Specifically, we find that LLaVA-13B performs consistently better than other multi-modal models on all skills except for relation understanding, 
+          where Qwen-VL-Chat performs better ((a)). On VideoQA tasks, in addition to Video-LLaVA-7B, Chat-Univi-7B is also relatively well-rounded, 
+          positioning in the top 3 models across all skills except for Attribute understanding  ((b)). On the other hand, while VideoChat2-7B specializes in object, attribute, 
           and temporal attribute understanding, it falls short on Action and Relation reasoning
 
           More analysis on finer-grained skills can be found in the paper.
@@ -326,33 +330,22 @@
         <h2 class="subtitle has-text-left">
           We are also interested in the relative performance of small versus large models with the same skills. On ImageQA tasks, for example, we observe that large multi-modal models collectively perform better than smaller models on ImageQA tasks. 
           Nevertheless, this finding might not always hold for individual models. Through t-tests with pairs of small and large models from the same source, 
-          we find one exception: \instructblips ($\mu$ = 0.63) significantly outperforms \instructblipl  ($\mu$ = 0.49) on relation understanding (with $p$-value $< 1e-5$). 
+          we find one exception: InstructBlip-7B ($\mu$ = 0.63) significantly outperforms InstructBlip-13B  ($\mu$ = 0.49) on relation understanding (with $p$-value $< 1e-5$). 
         </h2>
         <br>
         <h2 class="title is-5">Query 5: What is today's popular proprietary model: GPT-4o bad at?</h2>
         <img src="./static/images/analysis/query7-1.png">
         <h2 class="subtitle has-text-left">
-          Finally, we investigate \gptfouro, today's popular proprietary model:
-          1) what \emph{objects} are \gptfouro bad at recognizing when rotating/moving?
-          2) what \emph{relations} are \gptfouro bad at understanding?
-          3) what \emph{attributes} of objects are \gptfouro bad at recognizing?
-          To answer these questions, we first identify task generators for each question that can generate relevant tasks to evaluate, based on which we compare  \gptfouro's performance across different coarse-grained object/relation/attribute categories and their average. We can see that
-          1) \gptfouro does not perform well in recognizing “interactional” relations in images and “spatial” relations in videos, 
-          2) recognizing rotating/moving “furniture”, “food”, and “plant” is more challenging for \gptfouro than other object categories such as animal and vehicle, 
-          3) \gptfouro is worse at recognizing “color” than other attributes.
-          Analysis on fine-grained objects/relations/attributes that GPT4o is bad at can be found in the paper.
+          Finally, we investigate GPT-4o, today's popular proprietary model:
+          1) what \emph{objects} are GPT-4o bad at recognizing when rotating/moving?
+          2) what \emph{relations} are GPT-4o bad at understanding?
+          3) what \emph{attributes} of objects are GPT-4o bad at recognizing?
+          To answer these questions, we first identify task generators for each question that can generate relevant tasks to evaluate, based on which we compare GPT-4o's performance across different coarse-grained object/relation/attribute categories and their average. We can see that
+          1) GPT-4o does not perform well in recognizing “interactional” relations in images and “spatial” relations in videos, 
+          2) recognizing rotating/moving “furniture”, “food”, and “plant” is more challenging for GPT-4o than other object categories such as animal and vehicle, 
+          3) GPT-4o is worse at recognizing “color” than other attributes.
+          Analysis on fine-grained objects/relations/attributes that GPT-4o is bad at can be found in the paper.
         </h2>
-
-        <!-- <img src="./static/images/analysis/query4-1.png">
-        <img src="./static/images/analysis/query4-2.png">
-        <img src="./static/images/analysis/query4-3.png">
-        <img src="./static/images/analysis/query5-1.png">
-        <img src="./static/images/analysis/query5-2.png">
-        <img src="./static/images/analysis/query5-3.png">
-        <img src="./static/images/analysis/query5-4.png">
-        <img src="./static/images/analysis/query5-5.png">
-        <img src="./static/images/analysis/query6-1.png">
-        <img src="./static/images/analysis/query7-1.png"> -->
         <div class="content has-text-justified">
         </div>
       </div>
