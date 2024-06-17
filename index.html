@@ -251,30 +251,24 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Humans draw to facilitate reasoning: we draw auxiliary lines when solving geometry problems; we mark and
-              circle when
-              reasoning on maps; we use sketches to amplify our ideas and relieve our limited-capacity working memory.
-              However, such actions are missing in current multimodal language models (LMs). Current chain-of-thought
-              and tool-use
-              paradigms only use text as intermediate reasoning steps.
-              In this work, we introduce sketchpad, a framework that gives multimodal LMs a visual sketchpad and tools
-              to draw on the
-              sketchpad. The LM conducts planning and reasoning according to the visual artifacts it has drawn.
-              Different from prior work, which uses text-to-image models to enable LMs to draw, sketchpad enables LMs to
-              draw with lines,
-              boxes, marks, etc., which is closer to human sketching and better facilitates reasoning. sketchpad can
-              also use specialist
-              vision models during the sketching process (e.g., draw bounding boxes with object detection models, draw
-              masks with
-              segmentation models), to further enhance visual perception and reasoning. We experiment on a wide range of
-              math tasks
-              (including geometry, functions, graph, chess) and complex visual reasoning tasks. sketchpad substantially
-              improves
-              performance on all tasks over strong base models with no sketching, yielding an average gain of 12.7% on
-              math tasks,
-              and 8.6% on vision tasks. GPT-4o with sketchpad sets a new state of the art on all tasks, including
-              V*Bench (80.3%),
-              BLINK spatial reasoning (83.9%), and visual correspondence (80.8%).
+              Benchmarks for large multimodal language models (MLMs) now serve to simultaneously
+              assess the general capabilities of models instead of evaluating for a specific
+              capability. As a result, when a developer wants to identify which models to use for
+              their application, they are overwhelmed by the number of benchmarks and remain
+              uncertain about which benchmark’s results are most reflective of their specific use
+              case. This paper introduces TASK-ME-ANYTHING, a benchmark generation engine
+              which produces a benchmark tailored to a user’s needs. TASK-ME-ANYTHING
+              maintains an extendable taxonomy of visual assets and can programmatically generate
+              a vast number of task instances. Additionally, it algorithmically addresses
+              user queries regarding MLM performance efficiently within a computational budget.
+              It contains 113K images, 10K videos, 2K 3D object assets, over 365 object
+              categories, 655 attributes, and 335 relationships. It can generate 750M image/video
+              question-answering pairs, which focus on evaluating MLM perceptual capabilities.
+              TASK-ME-ANYTHING reveals critical insights: open-source MLMs excel in object
+              and attribute recognition but lack spatial and temporal understanding; each model
+              exhibits unique strengths and weaknesses; larger models generally perform better,
+              though exceptions exist; and GPT4O demonstrates challenges in recognizing
+              rotating/moving objects and distinguishing colors.
             </p>
 
           </div>
