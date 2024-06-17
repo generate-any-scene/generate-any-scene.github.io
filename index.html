@@ -307,6 +307,7 @@
         </h2>
         <br>
         <h2 class="title is-5">Query 3: What is the best MLM for each specific skill?</h2>
+        <img src="./static/images/analysis/query3-1.png">
         <h2 class="subtitle has-text-left">
           \llaval stood out as the strongest model on ImageQA tasks, achieving the best performance on all skills except for relation understanding; 
           and \videollavas is the overall winner on VideoQA tasks, scoring the highest on action understanding and second or third elsewhere. 
@@ -318,11 +319,35 @@
           More analysis on finer-grained skills can be found in the paper.
         </h2>
         <br>
-        <img src="./static/images/analysis/query3-1.png">
-        <img src="./static/images/analysis/query3-2.png">
+        <h2 class="title is-5">Query 4: How do small models compare against large models?</h2>
+        <img src="./static/images/analysis/query5-1.png">
+        <h2 class="subtitle has-text-left">
+          Finally, we investigate \gptfouro, today's popular proprietary model:
+          1) what \emph{objects} are \gptfouro bad at recognizing when rotating/moving?
+          2) what \emph{relations} are \gptfouro bad at understanding?
+          3) what \emph{attributes} of objects are \gptfouro bad at recognizing?
+          To answer these questions, we first identify task generators for each question that can generate relevant tasks to evaluate, based on which we compare  \gptfouro's performance across different coarse-grained object/relation/attribute categories and their average. We can see that
+          1) \gptfouro does not perform well in recognizing “interactional” relations in images and “spatial” relations in videos, 
+          2) recognizing rotating/moving “furniture”, “food”, and “plant” is more challenging for \gptfouro than other object categories such as animal and vehicle, 
+          3) \gptfouro is worse at recognizing “color” than other attributes.
+          Analysis on fine-grained objects/relations/attributes that GPT4o is bad at can be found in the paper.
+        </h2>
+        <br>
+        <h2 class="title is-5">Query 5: What is today's popular proprietary model: GPT-4o bad at?</h2>
+        <img src="./static/images/analysis/query7-1.png">
+        <h2 class="subtitle has-text-left">
+          Finally, we investigate \gptfouro, today's popular proprietary model:
+          1) what \emph{objects} are \gptfouro bad at recognizing when rotating/moving?
+          2) what \emph{relations} are \gptfouro bad at understanding?
+          3) what \emph{attributes} of objects are \gptfouro bad at recognizing?
+          To answer these questions, we first identify task generators for each question that can generate relevant tasks to evaluate, based on which we compare  \gptfouro's performance across different coarse-grained object/relation/attribute categories and their average. We can see that
+          1) \gptfouro does not perform well in recognizing “interactional” relations in images and “spatial” relations in videos, 
+          2) recognizing rotating/moving “furniture”, “food”, and “plant” is more challenging for \gptfouro than other object categories such as animal and vehicle, 
+          3) \gptfouro is worse at recognizing “color” than other attributes.
+          Analysis on fine-grained objects/relations/attributes that GPT4o is bad at can be found in the paper.
+        </h2>
 
-
-        <img src="./static/images/analysis/query4-1.png">
+        <!-- <img src="./static/images/analysis/query4-1.png">
         <img src="./static/images/analysis/query4-2.png">
         <img src="./static/images/analysis/query4-3.png">
         <img src="./static/images/analysis/query5-1.png">
@@ -331,7 +356,7 @@
         <img src="./static/images/analysis/query5-4.png">
         <img src="./static/images/analysis/query5-5.png">
         <img src="./static/images/analysis/query6-1.png">
-        <img src="./static/images/analysis/query7-1.png">
+        <img src="./static/images/analysis/query7-1.png"> -->
         <div class="content has-text-justified">
         </div>
       </div>
