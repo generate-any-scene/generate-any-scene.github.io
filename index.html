@@ -223,13 +223,14 @@
       <div class="container is-max-desktop is-centered has-text-centered">
         <h2 class="title is-3">What is Task Me Anything?</h2>
         <h2 class="subtitle has-text-left">
-          A benchmark generation engine that generates benchmarks on-the-fly tailored to the user’s need for assessing multimodal language models like GPT-4o
+          
         <!-- <div class="content has-text-justified">
         <img src="static/images/website_examples_1.jpg">
         <img src="static/images/website_examples_2.jpg">
         <div class="content has-text-justified"> -->
         <img src="./static/images/generation_process.png">
         <h2 class="subtitle has-text-left">
+          <b></b>A benchmark generation engine that generates benchmarks on-the-fly tailored to the user’s need for assessing multimodal language models like GPT-4o. <b>
           The top part illustrates the task generation process with an example video synthesized with 3D objects and their annotations, 
           and the task generator for generating questions about rotating objects' attributes. 
           The bottom part depicts the model evaluation process, which selects the relevant tasks based on the user's query and their budget and 
@@ -250,15 +251,15 @@
       <div style="text-align: left;">
         <h2 class="subtitle">
         <ul style="list-style-position: inside; padding-left: 20px;">
-          <li>365 object categories, 655 attributes, 335 relationships</li>
-          <li>28 task generators</li>
-          <li>Can possibly generate over 750M ImageQA / VideoQA tasks</li>
-          <li>Support fine-grained user queries with on-budget results approximation
+          <li> - 365 object categories, 655 attributes, 335 relationships</li>
+          <li> - 28 task generators</li>
+          <li> - Can possibly generate over 750M ImageQA / VideoQA tasks</li>
+          <li> - Support fine-grained user queries with on-budget results approximation
             <ul style="list-style-position: inside; padding-left: 20px;">
-              <li>Top-Ｋ: Find Top-5 objects that GPT4o is worst at recognizing when rotating</li>
-              <li>Threshold: Identify colors that GPT-4o recognizes with less than 30% average accuracy</li>
-              <li>Model Comparison: Compare with LLaVA-Next to determine which objects GPT-4o performs better at recognizing.</li>
-              <li>Model Debugging: Identify types of animals for which all open-source models perform significantly worse compared to other animals</li>
+              <li><b>Top-Ｋ</b>: Find Top-5 objects that GPT4o is worst at recognizing when rotating</li>
+              <li><b>Threshold</b>: Identify colors that GPT-4o recognizes with less than 30% average accuracy</li>
+              <li><b>Model Comparison</b>: Compare with LLaVA-Next to determine which objects GPT-4o performs better at recognizing.</li>
+              <li><b>Model Debugging</b>: Identify types of animals for which all open-source models perform significantly worse compared to other animals</li>
             </ul>
           </li>
         </ul>
@@ -277,7 +278,7 @@
           The statistics of generatable tasks of each task generator and example image/video in Task-Me-Anything. 
           We roughly each task generator with high-level perceptual skills and this collection of task generators can collectively generate over 750M VQA tasks. 
           The task space of Task Me Anything is easy to grow exponentially by (1) adding new source data (eg, 3D object models) or (2) adding new task generators. 
-          We plan to continuously expand the task space to adapt to the ever-changing capability of MLMs 
+          We plan to continuously expand the task space to adapt to the ever-changing capability of MLMs.
         </div>
       </div>
     </div>
@@ -301,8 +302,10 @@
         </h2>
         <br>
         <h2 class="title is-5">Query 2: What skills are MLMs best and worst at?</h2>
+        <h2 class="title is-5">Query 3: What is the best MLM for each specific skill?</h2>
+        <img src="./static/images/analysis/query3-1.png">
         <h2 class="subtitle has-text-left">
-          We analyze performance across different perceptual capabilities to answer: what skills are all models good or bad at? 
+          (Query 2) We analyze performance across different perceptual capabilities to answer: what skills are all models good or bad at? 
           We conduct this study for both ImageQA and VideoQA tasks respectively. 
           We find that no specific skill appears to be the best or worst across (both image and video) models. 
           We see that all models struggle in spatial reasoning, counting objects, and 3D attribute understanding on ImageQA tasks, 
@@ -317,11 +320,8 @@
           Meanwhile, LLaVA-7B is best at object recognition and worst at relation understanding, 
           struggling to understand simple actions such as ``touching'' that other models perform well on.
         </h2>
-        <br>
-        <h2 class="title is-5">Query 3: What is the best MLM for each specific skill?</h2>
-        <img src="./static/images/analysis/query3-1.png">
         <h2 class="subtitle has-text-left">
-          LLaVA-13B stood out as the strongest model on ImageQA tasks, achieving the best performance on all skills except for relation understanding; 
+          (Query 3) LLaVA-13B stood out as the strongest model on ImageQA tasks, achieving the best performance on all skills except for relation understanding; 
           and Video-LLaVA-7B is the overall winner on VideoQA tasks, scoring the highest on action understanding and second or third elsewhere. 
           Specifically, we find that LLaVA-13B performs consistently better than other multi-modal models on all skills except for relation understanding, 
           where Qwen-VL-Chat performs better \((a)\). On VideoQA tasks, in addition to Video-LLaVA-7B, Chat-Univi-7B is also relatively well-rounded, 
@@ -329,6 +329,10 @@
           and temporal attribute understanding, it falls short on Action and Relation reasoning
           More analysis on finer-grained skills can be found in the paper.
         </h2>
+        <br>
+        
+        
+
         <br>
         <h2 class="title is-5">Query 4: How do small models compare against large models?</h2>
         <img src="./static/images/analysis/query5-1.png">
