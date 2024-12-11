@@ -167,7 +167,6 @@
                     <span>Code</span>
                   </a>
                 </span>
-
                 <!-- <span class="link-block">
                   <a href="https://huggingface.co/spaces/zixianma/TaskMeAnything-UI"
                     class="external-link button is-normal is-rounded is-dark">
@@ -177,7 +176,6 @@
                     <span>Graphical Interface</span>
                   </a>
                 </span>
-
                 <span class="link-block">
                   <a href="https://huggingface.co/collections/jieyuz2/taskmeanything-664ebf028ab2524c0380526a"
                     class="external-link button is-normal is-rounded is-dark">
@@ -225,7 +223,7 @@
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container is-max-desktop is-centered has-text-centered">
-        <h2 class="title is-3">What is Generate Me Anything?</h2>
+        <h2 class="title is-3">Captions Generation Process</h2>
         <h2 class="subtitle has-text-left">
           
         <!-- <div class="content has-text-justified">
@@ -238,154 +236,86 @@
           The top part illustrates the task generation process with an example video synthesized with 3D objects and their annotations, 
           and the task generator for generating questions about rotating objects' attributes. 
           The bottom part depicts the model evaluation process, which selects the relevant tasks based on the user's query and their budget and 
-          performs either full evaluation or results approximation to answer the query.  
+          performs either full evaluation or results approximation to answer the query.
         </div>
       </div>
     </div>
   </section>
-  <br>
-  <br>
-  <br>
-
-
-
-  <section class="hero is-small">
-    <div class="container is-max-desktop is-centered">
-      <div class="has-text-centered">
-        <h2 class="title is-3">What are in Task Me Anything?</h2>
-      </div>
-      <br>
-      <div style="text-align: left;">
-        <h2 class="subtitle">
-          <ul style="list-style-position: inside; padding-left: 20px;">
-            <li> - <span style="color: red;">365</span> object categories, <span style="color: red;">655</span> attributes, <span style="color: red;">335</span> relationships</li>
-            <li> - <span style="color: red;">28</span> task generators</li>
-            <li> - Can possibly generate over <span style="color: red;">750M</span> ImageQA / VideoQA tasks</li>
-            <li> - Support fine-grained user queries with <span style="color: red;">on-budget results approximation</span>
-            
-              <!-- <ul style="list-style-position: inside; padding-left: 20px;">
-                <li><b>Top-Ｋ</b>: Find Top-5 objects that GPT-4o is worst at recognizing when rotating</li>
-                <li><b>Threshold</b>: Identify colors that GPT-4o recognizes with less than 30% average accuracy</li>
-                <li><b>Model Comparison</b>: Compare with LLaVA-Next to determine which objects GPT-4o performs better at recognizing.</li>
-                <li><b>Model Debugging</b>: Identify types of animals for which all open-source models perform significantly worse compared to other animals</li>
-              </ul> -->
-              
-            </li>
-          </ul>
-          <br>
-          <img src="./static/images/query.jpg">
-        </h2>
-      </div>
-    </div>
-  </section>
-  <br>
-  <br>
   <br>
 
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container is-max-desktop is-centered has-text-centered">
-        <h2 class="title is-3">The task space of Task Me Anything</h2>
-        <img src="./static/images/stats.png">
+        <h2 class="title is-3">Application 1: </h2>
         <h2 class="subtitle has-text-left">
-          The statistics of generatable tasks of each task generator and example image/video in Task-Me-Anything. 
-          We tag each task generator with high-level perceptual skills and this collection of task generators can collectively generate over 750M VQA tasks. 
-          The task space of Task Me Anything is easy to grow exponentially by (1) adding new source data (eg, 3D object models) or (2) adding new task generators. 
-          We plan to continuously expand the task space to adapt to the ever-changing capability of MLMs.
+          
+        <!-- <div class="content has-text-justified">
+        <img src="static/images/website_examples_1.jpg">
+        <img src="static/images/website_examples_2.jpg">
+        <div class="content has-text-justified"> -->
+        <img src="./static/images/generation_process.png">
+        <h2 class="subtitle has-text-left">
+          <b>A benchmark generation engine that generates benchmarks on-the-fly tailored to the user’s need for assessing multimodal language models like GPT-4o.</b>
+          The top part illustrates the task generation process with an example video synthesized with 3D objects and their annotations, 
+          and the task generator for generating questions about rotating objects' attributes. 
+          The bottom part depicts the model evaluation process, which selects the relevant tasks based on the user's query and their budget and 
+          performs either full evaluation or results approximation to answer the query.
         </div>
       </div>
     </div>
   </section>
   <br>
-  <br>
-  <br>
-
   <section class="hero is-small">
     <div class="hero-body">
       <div class="container is-max-desktop is-centered has-text-centered">
-        <h2 class="title is-3">Analysis</h2>
-        <h2 class="title is-5">Query 1: How do models perform over a random subset of all possible questions?</h2>
-        <img src="./static/images/analysis/query1-1.png">
+        <h2 class="title is-3">Application 2: </h2>
         <h2 class="subtitle has-text-left">
-          We evaluated 18 MLMs on the Task-Me-Anything-Random, a random set of generated tasks, with a detailed prompt and a succinct prompt.
-          The detailed prompt typically yields better results; however, certain models, like GPT4V, perform much better with the succinct prompt, 
-          indicating that current models are still prompt-sensitive. For ImageQA tasks, the latest open-sourced models, such as InternVL-Chat-1.5-24B and LLaVA-NEXT-34B, 
-          perform better than popular proprietary models, achieving state-of-the-art performance. 
-          Notably, models like InstructBlip-7B and Qwen-VL perform significantly better with detailed prompt than succinct prompt. 
-          For VideoQA tasks, we also evaluated larger or proprietary ImageQA models, like GPT4V, by concatenating four frames of a video into a single picture. 
-          Notably, Video-LLaVA-7B perform much better with succinct prompts than other small open-source models. 
-        </h2>
-        <br>
-        <h2 class="title is-5">Query 2: What skills are MLMs best and worst at?</h2>
-        <h2 class="title is-5">Query 3: What is the best MLM for each specific skill?</h2>
-        <img src="./static/images/analysis/query3-1.png">
+          
+        <!-- <div class="content has-text-justified">
+        <img src="static/images/website_examples_1.jpg">
+        <img src="static/images/website_examples_2.jpg">
+        <div class="content has-text-justified"> -->
+        <img src="./static/images/generation_process.png">
         <h2 class="subtitle has-text-left">
-          (Query 2) We analyze performance across different perceptual capabilities to answer: what skills are all models good or bad at? 
-          We conduct this study for both ImageQA and VideoQA tasks respectively. 
-          We find that no specific skill appears to be the best or worst across (both image and video) models. 
-          We see that all models struggle in spatial reasoning, counting objects, and 3D attribute understanding on ImageQA tasks, 
-          and object recognition, temporal understanding on VideoQA tasks. 
-          They perform well on object, attribute, and other relationship recognition instances.
-          Surprisingly, we find that most MLMs perform the best at relationship understanding between objects, 
-          scoring high if not perfectly on interactional relations such as ``riding'', ``looking into'', ``lying next to'' etc. 
-          On the other hand, these models struggle the most in spatial reasoning in synthetic images, performing poorly especially on 
-          questions that ask about objects in the ``middle'', ``bottom'' or ``back'' (for 3D images) part of the image. 
-          Nevertheless, some models behave differently. For example, LLaVA-13B is worst at recognizing 3D attributes, 
-          failing at identifying the ``smallest'' or ``closest'' 3D objects correctly. 
-          Meanwhile, LLaVA-7B is best at object recognition and worst at relation understanding, 
-          struggling to understand simple actions such as ``touching'' that other models perform well on.
-        </h2>
-        <h2 class="subtitle has-text-left">
-          (Query 3) LLaVA-13B stood out as the strongest model on ImageQA tasks, achieving the best performance on all skills except for relation understanding; 
-          and Video-LLaVA-7B is the overall winner on VideoQA tasks, scoring the highest on action understanding and second or third elsewhere. 
-          Specifically, we find that LLaVA-13B performs consistently better than other multi-modal models on all skills except for relation understanding, 
-          where Qwen-VL-Chat performs better \((a)\). On VideoQA tasks, in addition to Video-LLaVA-7B, Chat-Univi-7B is also relatively well-rounded, 
-          positioning in the top 3 models across all skills except for Attribute understanding  \((b)\). On the other hand, while VideoChat2-7B specializes in object, attribute, 
-          and temporal attribute understanding, it falls short on Action and Relation reasoning
-          More analysis on finer-grained skills can be found in the paper.
-        </h2>
-        <br>
-        
-        
-
-        <br>
-        <h2 class="title is-5">Query 4: How do small models compare against large models?</h2>
-        <img src="./static/images/analysis/query5-1.png">
-        <h2 class="subtitle has-text-left">
-          We are also interested in the relative performance of small versus large models with the same skills. On ImageQA tasks, for example, we observe that large multi-modal models collectively perform better than smaller models on ImageQA tasks. 
-          Nevertheless, this finding might not always hold for individual models. Through t-tests with pairs of small and large models from the same source, 
-          we find one exception: InstructBlip-7B \((\mu = 0.63)\) significantly outperforms InstructBlip-13B \((\mu = 0.49)\) on relation understanding (with \(p\)-value \(< 1e-5\)). 
-        </h2>
-        <br>
-        <h2 class="title is-5">Query 5: What is today's popular proprietary model: GPT-4o bad at?</h2>
-        <img src="./static/images/analysis/query7-1.png">
-        <h2 class="subtitle has-text-left">
-          Finally, we investigate GPT-4o, today's popular proprietary model:
-          1) what objects are GPT-4o bad at recognizing when rotating/moving?
-          2) what relations are GPT-4o bad at understanding?
-          3) what attributes of objects are GPT-4o bad at recognizing?
-          To answer these questions, we first identify task generators for each question that can generate relevant tasks to evaluate, based on which we compare GPT-4o's performance across different coarse-grained object/relation/attribute categories and their average. We can see that
-          1) GPT-4o does not perform well in recognizing "interactional" relations in images and "spatial" relations in videos, 
-          2) recognizing rotating/moving "furniture", "food", and "plant" is more challenging for GPT-4o than other object categories such as animal and vehicle, 
-          3) GPT-4o is worse at recognizing "color" than other attributes.
-          Analysis on fine-grained objects/relations/attributes that GPT-4o is bad at can be found in the paper.
-        </h2>
-        <div class="content has-text-justified">
+          <b>A benchmark generation engine that generates benchmarks on-the-fly tailored to the user’s need for assessing multimodal language models like GPT-4o.</b>
+          The top part illustrates the task generation process with an example video synthesized with 3D objects and their annotations, 
+          and the task generator for generating questions about rotating objects' attributes. 
+          The bottom part depicts the model evaluation process, which selects the relevant tasks based on the user's query and their budget and 
+          performs either full evaluation or results approximation to answer the query.
         </div>
-        <h2 class="title is-5">Please refer to the paper for more experiments, findings, and takeaways!</h2>
       </div>
     </div>
   </section>
   <br>
-  <br>
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop is-centered has-text-centered">
+        <h2 class="title is-3">Application 3: </h2>
+        <h2 class="subtitle has-text-left">
+          
+        <!-- <div class="content has-text-justified">
+        <img src="static/images/website_examples_1.jpg">
+        <img src="static/images/website_examples_2.jpg">
+        <div class="content has-text-justified"> -->
+        <img src="./static/images/generation_process.png">
+        <h2 class="subtitle has-text-left">
+          <b>A benchmark generation engine that generates benchmarks on-the-fly tailored to the user’s need for assessing multimodal language models like GPT-4o.</b>
+          The top part illustrates the task generation process with an example video synthesized with 3D objects and their annotations, 
+          and the task generator for generating questions about rotating objects' attributes. 
+          The bottom part depicts the model evaluation process, which selects the relevant tasks based on the user's query and their budget and 
+          performs either full evaluation or results approximation to answer the query.
+        </div>
+      </div>
+    </div>
+  </section>
   <br>
 
-  <!-- <section class="section">
-    <div class="container is-max-desktop is-centered" id="gradio">
-      <h2 class="title is-3">Graphical Interface</h2>
-      <gradio-app src="https://huggingface.co/spaces/zixianma/TaskMeAnything-UI"></gradio-app>
-    </div>
-  </section> -->
+
+
+
+
+
+
 
 
 
@@ -393,7 +323,7 @@
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>@article{zhang2024task,
-  title={Task Me Anything},
+  title={Generate Any Scene},
   author={Zhang, Jieyu and Huang, Weikai and Ma, Zixian and Michel, Oscar and He, Dong and Gupta, Tanmay and Ma, Wei-Chiu and Farhadi, Ali and Kembhavi, Aniruddha and Krishna, Ranjay},
   journal={arXiv preprint arXiv:2406.11775},
   year={2024}
