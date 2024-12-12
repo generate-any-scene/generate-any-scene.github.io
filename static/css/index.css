@@ -16,7 +16,14 @@ body {
 .dnerf {
   font-variant: small-caps;
 }
-
+.generate-any-scene {
+    font-family: 'Times New Roman', Times, serif; /* Classic serif font */
+    font-variant: small-caps; /* Converts text to small caps */
+    font-weight: bolder; /* Makes the text bold */
+    /* font-size: 1.2em; Adjusts the size for emphasis */
+    /*letter-spacing: 0.05em; /* Adds slight spacing for readability */
+}
+  
 
 .teaser .hero-body {
   padding-top: 0;
